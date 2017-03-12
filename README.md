@@ -1,2 +1,6 @@
 # think-python
-me working through examples from the book "Think Python"
+
+
+Working through some examples from the book 
+[Think Python](http://greenteapress.com/thinkpython/thinkpython.pdf).
+
