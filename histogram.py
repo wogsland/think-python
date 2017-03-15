@@ -4,4 +4,5 @@ def histogram(s):
         d[c] = d.get(c,0) + 1
     return d
 
-print histogram('supercalifrigilisticexpialidocious')
+if __name__ == '__main__':
+    print histogram('supercalifrigilisticexpialidocious')
