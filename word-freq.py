@@ -4,12 +4,14 @@ emma = open('emma.txt')
 
 # break the text into words
 words = []
+i = 0
 for line in emma:
-    for punt in string.punctuation:
-        line = line.replace(punt, '', 1000)
-    for word in line.split():
-        words.append(word.lower())
-
+    if i > 245: # skip header
+        for punt in string.punctuation:
+            line = line.replace(punt, '', 1000)
+        for word in line.split():
+            words.append(word.lower())
+    i += 1
 # count the word frequency
 freq = dict()
 for word in words:
@@ -28,10 +30,12 @@ for wordcount in wordcounts:
 
 sortable.sort(reverse=True)
 
-# print top twenty words
+# print top n words
 i = 0
+n = 20
+print 'The', n ,'most frequent words in Emma:'
 for wordtuple in sortable:
     for word in wordtuple[1]:
-        if i <= 20:
+        if i <= n:
             print word
         i += 1
